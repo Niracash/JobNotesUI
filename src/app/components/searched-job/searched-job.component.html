@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Searched Jobs</h1>
+    <div class="card mb-3" style="width: 25rem;" *ngFor="let job of jobs">
+        <div class="card-body" [class.searchedColor]="job.searched">
+            <h5 class="card-title"><b>Company Name:</b> {{job.companyName}}</h5>
+            <p class="card-text" ><b>Email:</b> {{job.email}}</p>
+            <p class="card-text"><b>Phone:</b> {{job.phoneNumber}}</p>
+            <label class="card-text"><b>Note:</b></label>
+            <article class="card-text" [innerHTML]="convertToHtmlBreaks(job.details)">{{job.details}}</article>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Created At:</b> {{job.createdDate | date: 'dd/MM/yyyy hh:mm a'}}</li>
+            <li class="list-group-item"><b>Searched At:</b> {{job.searchedDate | date: 'dd/MM/yyyy hh:mm a'}}</li>
+        </ul>
+    </div>
+
+</div>

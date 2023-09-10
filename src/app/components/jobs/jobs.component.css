@@ -1,0 +1,14 @@
+.searchedColor {
+    color: #54B435;
+}
+
+.card-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.job-card{
+    margin: 1%;
+}
+textarea{
+    resize: none;
+}

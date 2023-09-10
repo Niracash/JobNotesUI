@@ -1,0 +1,52 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <h1>Add Company</h1>
+        <form #form="ngForm" (ngSubmit)="addJob()">
+            <div class="mb-3">
+                <label for="title" class="form-label">Company Name</label>
+                <input type="text" class="form-control" name="companyName" [(ngModel)]="createJob.companyName">
+                <br>
+                <label for="note" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="createJob.email">
+                <br>
+                <label for="note" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="createJob.phoneNumber">
+                <br>
+                <label for="note" class="form-label">Notes</label>
+                <div class="form-floating">
+                    <textarea class="form-control" name="details" style="height: 200px"
+                        [(ngModel)]="createJob.details"></textarea>
+                </div>
+                <div id="notetext" class="form-text">Add company here.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Companies</h1>
+    <div class="card-wrapper">
+        <div class="job-card" *ngFor="let job of jobs">
+            <div class="card mb-3 h-100" style="width: 25rem;">
+                <div class="card-body" [class.searchedColor]="job.searched">
+                    <h5 class="card-title"><b>Company Name:</b> {{job.companyName}}</h5>
+                    <p class="card-text" ><b>Email:</b> {{job.email}}</p>
+                    <p class="card-text"><b>Phone:</b> {{job.phoneNumber}}</p>
+                    <label class="card-text"><b>Note:</b></label>
+                    <article class="card-text" [innerHTML]="convertToHtmlBreaks(job.details)">{{job.details}}</article>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Created At: {{job.createdDate | date: 'dd/MM/yyyy hh:mm a'}}</li>
+                    <li class="list-group-item"><input type="checkbox" [checked]="job.searched"
+                            (change)="onJobSearched(job.id, job)"> Searched
+                    </li>
+                    <li class="list-group-item">
+                        <a [routerLink]="[]" (click)="removeJob(job.id)">Archive</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
