@@ -1,8 +1,8 @@
-# **JobNotesUI**
+## **JobNotesUI**
 
 This is the frontend for JobNotes, created in Angular. 
 
-## Table of Contents
+### Table of Contents
 
 - [1. Models](#1-models)
 - [2. Services](#2-services)
@@ -11,9 +11,9 @@ This is the frontend for JobNotes, created in Angular.
 - [Additional Notes](#additional-notes)
 
 
-## **1. Models**
+### **1. Models**
 
-### **Job Model (job.model.ts)**
+#### **Job Model (job.model.ts)**
 
 **Attributes:**
 
@@ -28,9 +28,9 @@ This is the frontend for JobNotes, created in Angular.
 - `isRemoved`: Boolean to temporary remove job.
 - `removedDate`: Date the job was temporarily removed.
 
-## **2. Services**
+### **2. Services**
 
-### **Job Service (job.service.ts)**
+#### **Job Service (job.service.ts)**
 
 - `getAllJobs()`: Fetches all jobs.
 - `addJob(job: Job)`: Adds a new job.
@@ -41,16 +41,16 @@ This is the frontend for JobNotes, created in Angular.
 - `permRemoveJob(id: string)`: Permanently removes job.
 - `getAllSearchedJobs()`: Fetches all searched jobs.
 
-## **3. Components**
+### **3. Components**
 
-### **Searched Job Component (searched-job.component)**
+#### **Searched Job Component (searched-job.component)**
 
 - **Functionalities:**
   - Fetches and displays all the searched jobs.
 - **Utilities:** 
   - `convertToHtmlBreaks(text: string)`: Converts newline characters to HTML line breaks.
 
-### **Removed Job Component (removed-job.component)**
+#### **Removed Job Component (removed-job.component)**
 
 - **Functionalities:**
   - Fetches and displays all the removed (archived) jobs.
@@ -58,14 +58,14 @@ This is the frontend for JobNotes, created in Angular.
 - **Utilities:** 
   - `convertToHtmlBreaks(text: string)`: Converts newline characters to HTML line breaks.
 
-### **Jobs Component (jobs.component)**
+#### **Jobs Component (jobs.component)**
 
 - **Functionalities:**
   - Allows the user to add a new company.
   - Displays all the available jobs.
   - Provides an option to search or delete the job.
 
-## **4. Views (HTML)**
+### **4. Views (HTML)**
 
 - **Searched Jobs (searched-job.component.html):**
   - Displays a list of all searched jobs.
@@ -79,7 +79,7 @@ This is the frontend for JobNotes, created in Angular.
   - Provides a form to add new jobs/companies.
   - Displays a list of all jobs with options to search, update or archive them.
 
-## **Additional Notes:**
+### **Additional Notes:**
 
 - **Utilities:** 
   - `convertToHtmlBreaks(text: string)`: Converts newline characters to HTML line breaks.
