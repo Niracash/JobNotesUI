@@ -4,11 +4,12 @@ This is the frontend for JobNotes, created in Angular.
 
 ## Table of Contents
 
-- [Models](#models)
-- [Services](#services)
-- [Components](#components)
-- [Views](#views)
+- [1. Models](#1-models)
+- [2. Services](#2-services)
+- [3. Components](#3-components)
+- [4. Views (HTML)](#4-views-html)
 - [Additional Notes](#additional-notes)
+
 
 ## **1. Models**
 
